@@ -3,6 +3,7 @@ import IUseInput from "../interfaces/i-use-input";
 import { InputType } from "../types/input-type";
 
 export const BaseInput: React.FC<BaseInputProperties> = ({
+  id,
   inputStyle,
   placeholder,
   required,
@@ -40,6 +41,7 @@ export const BaseInput: React.FC<BaseInputProperties> = ({
   return (
     <input
       className={inputStyle}
+      id={id}
       onFocus={handleUpdate}
       onInput={handleUpdate}
       placeholder={placeholder}

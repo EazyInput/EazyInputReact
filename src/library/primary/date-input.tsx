@@ -3,6 +3,7 @@ import IUseInput from "../interfaces/i-use-input";
 import PrimaryInputProperties from "../types/primary-input-properties";
 
 export const DateInput: React.FC<DateInputProperties> = ({
+  id,
   inputStyle,
   placeholder,
   required,
@@ -10,6 +11,7 @@ export const DateInput: React.FC<DateInputProperties> = ({
 }) => {
   return (
     <BaseInput
+      id={id}
       inputStyle={inputStyle}
       placeholder={placeholder}
       required={required}

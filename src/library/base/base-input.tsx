@@ -2,6 +2,8 @@ import IUseInput from "../interfaces/i-use-input";
 import { InputType } from "../types/input-type";
 
 export const BaseInput: React.FC<BaseInputProperties> = ({
+  inputStyle,
+  required,
   type,
   useInput,
 }) => {
@@ -24,8 +26,10 @@ export const BaseInput: React.FC<BaseInputProperties> = ({
 
   return (
     <input
+      className={inputStyle}
       onFocus={useInput.handleUpdate}
       onInput={useInput.handleUpdate}
+      required={required}
       type={type}
       value={determineValue()}
     />
@@ -33,6 +37,8 @@ export const BaseInput: React.FC<BaseInputProperties> = ({
 };
 
 interface BaseInputProperties {
+  inputStyle?: string;
+  required?: boolean;
   type: string;
   useInput: IUseInput<InputType>;
 }

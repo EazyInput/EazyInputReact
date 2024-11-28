@@ -1,10 +1,24 @@
+import { PrimaryInputProperties } from "..";
 import { BaseInput } from "../base/base-input";
 import IUseInput from "../interfaces/i-use-input";
 
-export const NumberInput: React.FC<NumberInputProperties> = ({ useInput }) => {
-  return <BaseInput type="number" useInput={useInput} />;
+export const NumberInput: React.FC<NumberInputProperties> = ({
+  inputStyle,
+  placeholder,
+  required,
+  useInput,
+}) => {
+  return (
+    <BaseInput
+      inputStyle={inputStyle}
+      placeholder={placeholder}
+      required={required}
+      type="number"
+      useInput={useInput}
+    />
+  );
 };
 
-interface NumberInputProperties {
-  useInput: IUseInput<number>;
+interface NumberInputProperties extends PrimaryInputProperties {
+  useInput: IUseInput<number, string>;
 }

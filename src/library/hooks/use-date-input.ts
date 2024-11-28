@@ -3,8 +3,8 @@ import useInput from "./use-input";
 
 export default function useDateInput(
   initialValue = new Date(),
-): IUseInput<Date> {
-  return useInput<Date>(initialValue, (updated) => {
+): IUseInput<Date, string> {
+  return useInput<Date, string>(initialValue, (updated) => {
     const parts = updated.split("-");
 
     // A normal parse will produce UTC, resulting in a off by one day error.

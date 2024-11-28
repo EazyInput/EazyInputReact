@@ -1,1 +1,1 @@
-export type InputType = string | Date | number | boolean;
+export type InputType = string | Date | number;

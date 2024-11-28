@@ -1,17 +1,17 @@
 import { useState } from "react";
 import IUseInput from "../interfaces/i-use-input";
 
-export default function useInput<T>(
+export default function useInput<T, K>(
   initialValue: T,
-  mappingFunction: (value: string) => T,
-): IUseInput<T> {
+  mappingFunction: (value: K) => T,
+): IUseInput<T, K> {
   const [value, setValue] = useState<T>(initialValue);
   const [valid, setValid] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
   const [dirty, setDirty] = useState<boolean>(false);
 
   const handleUpdate = (
-    value: string,
+    value: K,
     valid: boolean,
     validationMessage: string,
   ): void => {

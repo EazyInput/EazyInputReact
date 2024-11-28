@@ -14,6 +14,8 @@ export { default as useDateInput } from "./hooks/use-date-input";
 // Types
 
 export type { InputType } from "./types/input-type";
+export type { default as CommonInputProperties } from "./types/common-input-properties";
+export type { default as PrimaryInputProperties } from "./types/primary-input-properties";
 
 // Base
 

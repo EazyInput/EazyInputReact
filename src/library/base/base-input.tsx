@@ -1,8 +1,10 @@
+import { CommonInputProperties } from "..";
 import IUseInput from "../interfaces/i-use-input";
 import { InputType } from "../types/input-type";
 
 export const BaseInput: React.FC<BaseInputProperties> = ({
   inputStyle,
+  placeholder,
   required,
   type,
   useInput,
@@ -16,6 +18,7 @@ export const BaseInput: React.FC<BaseInputProperties> = ({
         return useInput.value as number;
       }
       case "date": {
+        // Input Date format only uses yyyy-mm-dd format
         return (useInput.value as Date).toISOString().slice(0, 10);
       }
       default: {
@@ -39,6 +42,7 @@ export const BaseInput: React.FC<BaseInputProperties> = ({
       className={inputStyle}
       onFocus={handleUpdate}
       onInput={handleUpdate}
+      placeholder={placeholder}
       required={required}
       type={type}
       value={determineValue()}
@@ -46,9 +50,7 @@ export const BaseInput: React.FC<BaseInputProperties> = ({
   );
 };
 
-interface BaseInputProperties {
-  inputStyle?: string;
-  required?: boolean;
+interface BaseInputProperties extends CommonInputProperties {
   type: string;
-  useInput: IUseInput<InputType>;
+  useInput: IUseInput<InputType, string>;
 }

@@ -1,6 +1,8 @@
 import IUseInput from "../interfaces/i-use-input";
 import useInput from "./use-input";
 
-export default function useTextInput(initialValue = ""): IUseInput<string> {
-  return useInput<string>(initialValue, (updated) => updated);
+export default function useTextInput(
+  initialValue = "",
+): IUseInput<string, string> {
+  return useInput<string, string>(initialValue, (updated) => updated);
 }

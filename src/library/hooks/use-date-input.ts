@@ -5,7 +5,7 @@ export default function useDateInput(
   initialValue = new Date(),
 ): IUseInput<Date> {
   return useInput<Date>(initialValue, (updated) => {
-    const parts = updated.value.split("-");
+    const parts = updated.split("-");
 
     // A normal parse will produce UTC, resulting in a off by one day error.
     // new Date(year, month [, day [, hours[, minutes[, seconds[, ms]]]]])

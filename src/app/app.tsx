@@ -21,12 +21,12 @@ export const App: React.FC = () => {
         <BaseField label="name" htmlFor={useId()}>
           <TextInput useInput={name} />
         </BaseField>
-        <div>
+        <BaseField label="age" htmlFor={useId()}>
           <NumberInput useInput={age} />
-        </div>
-        <div>
+        </BaseField>
+        <BaseField label="date" htmlFor={useId()}>
           <DateInput useInput={start} />
-        </div>
+        </BaseField>
       </fieldset>
     </form>
   );

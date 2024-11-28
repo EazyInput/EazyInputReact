@@ -3,7 +3,6 @@ import { BaseInput } from "../base/base-input";
 import IUseInput from "../interfaces/i-use-input";
 
 export const NumberInput: React.FC<NumberInputProperties> = ({
-  id,
   inputStyle,
   placeholder,
   required,
@@ -11,7 +10,6 @@ export const NumberInput: React.FC<NumberInputProperties> = ({
 }) => {
   return (
     <BaseInput
-      id={id}
       inputStyle={inputStyle}
       placeholder={placeholder}
       required={required}

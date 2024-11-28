@@ -1,6 +1,10 @@
 import IUseInput from "../interfaces/i-use-input";
+import CommonInputProperties from "../types/common-input-properties";
 
 export const BaseCheckBox: React.FC<BaseCheckBoxProperties> = ({
+  inputStyle,
+  placeholder,
+  required,
   useInput,
 }) => {
   const handleUpdate = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -14,10 +18,19 @@ export const BaseCheckBox: React.FC<BaseCheckBoxProperties> = ({
   };
 
   return (
-    <input type="checkbox" checked={useInput.value} onChange={handleUpdate} />
+    <input
+      checked={useInput.value}
+      className={inputStyle}
+      id={useInput.id}
+      onChange={handleUpdate}
+      placeholder={placeholder}
+      ref={useInput.reference}
+      required={required}
+      type="checkbox"
+    />
   );
 };
 
-interface BaseCheckBoxProperties {
+interface BaseCheckBoxProperties extends CommonInputProperties {
   useInput: IUseInput<boolean, boolean>;
 }

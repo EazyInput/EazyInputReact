@@ -4,7 +4,6 @@ import IUseInput from "../interfaces/i-use-input";
 import PrimaryInputProperties from "../types/primary-input-properties";
 
 export const TextInput: React.FC<TextInputProperties> = ({
-  id,
   inputStyle,
   placeholder,
   required,
@@ -12,7 +11,6 @@ export const TextInput: React.FC<TextInputProperties> = ({
 }) => {
   return (
     <BaseInput
-      id={id}
       inputStyle={inputStyle}
       placeholder={placeholder}
       required={required}

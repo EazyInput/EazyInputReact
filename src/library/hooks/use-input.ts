@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useId, useRef, useState } from "react";
 import IUseInput from "../interfaces/i-use-input";
 
 export default function useInput<T, K>(
   initialValue: T,
   mappingFunction: (value: K) => T,
 ): IUseInput<T, K> {
+  const id = useId();
+  const reference = useRef<HTMLInputElement>(null);
   const [value, setValue] = useState<T>(initialValue);
   const [valid, setValid] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
@@ -21,5 +23,5 @@ export default function useInput<T, K>(
     setError(validationMessage);
   };
 
-  return { dirty, error, value, valid, handleUpdate };
+  return { dirty, error, id, reference, value, valid, handleUpdate };
 }

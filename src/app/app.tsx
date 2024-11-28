@@ -1,4 +1,3 @@
-import { useId } from "react";
 import {
   BaseField,
   DateInput,
@@ -21,16 +20,16 @@ export const App: React.FC = () => {
     <form>
       <fieldset>
         <legend>Information:</legend>
-        <BaseField label="name" htmlFor={useId()}>
+        <BaseField label="name" htmlFor={name.id}>
           <TextInput useInput={name} />
         </BaseField>
-        <BaseField label="age" htmlFor={useId()}>
+        <BaseField label="age" htmlFor={age.id}>
           <NumberInput useInput={age} />
         </BaseField>
-        <BaseField label="date" htmlFor={useId()}>
+        <BaseField label="date" htmlFor={start.id}>
           <DateInput useInput={start} />
         </BaseField>
-        <BaseField label="terms" htmlFor={useId()}>
+        <BaseField label="terms" htmlFor={terms.id}>
           <BaseCheckBox useInput={terms} />
         </BaseField>
       </fieldset>

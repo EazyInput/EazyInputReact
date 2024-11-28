@@ -18,9 +18,10 @@ export type { InputType } from "./types/input-type";
 // Base
 
 export { BaseInput } from "./base/base-input";
+export { BaseField } from "./base/base-field";
 
-// Secondary
+// Primary
 
-export { TextInput } from "./secondary/text-input";
-export { NumberInput } from "./secondary/number-input";
-export { DateInput } from "./secondary/date-input";
+export { TextInput } from "./primary/text-input";
+export { NumberInput } from "./primary/number-input";
+export { DateInput } from "./primary/date-input";

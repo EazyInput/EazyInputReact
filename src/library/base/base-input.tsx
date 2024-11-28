@@ -24,6 +24,7 @@ export const BaseInput: React.FC<BaseInputProperties> = ({
 
   return (
     <input
+      onFocus={useInput.handleUpdate}
       onInput={useInput.handleUpdate}
       type={type}
       value={determineValue()}

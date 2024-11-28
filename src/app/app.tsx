@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useId } from "react";
 import {
+  BaseField,
   DateInput,
   NumberInput,
   TextInput,
@@ -13,17 +14,13 @@ export const App: React.FC = () => {
   const age = useNumberInput();
   const start = useDateInput();
 
-  useEffect(() => {
-    console.log(start.value);
-  }, [start.value]);
-
   return (
     <form>
       <fieldset>
         <legend>Information:</legend>
-        <div>
+        <BaseField label="name" htmlFor={useId()}>
           <TextInput useInput={name} />
-        </div>
+        </BaseField>
         <div>
           <NumberInput useInput={age} />
         </div>

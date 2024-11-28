@@ -5,8 +5,21 @@ export const BaseInput: React.FC<BaseInputProperties> = ({
   type,
   useInput,
 }) => {
-  const determineValue = (): string => {
-    return useInput.value.toString();
+  const determineValue = (): string | number => {
+    switch (type) {
+      case "text": {
+        return useInput.value.toString();
+      }
+      case "number": {
+        return useInput.value as number;
+      }
+      case "date": {
+        return (useInput.value as Date).toISOString().slice(0, 10);
+      }
+      default: {
+        return useInput.value.toString();
+      }
+    }
   };
 
   return (

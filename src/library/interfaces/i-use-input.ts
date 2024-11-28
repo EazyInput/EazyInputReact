@@ -4,5 +4,9 @@ export default interface IUseInput<T> extends IValid {
   dirty: boolean;
   error: string;
   value: T;
-  handleUpdate: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleUpdate: (
+    value: string,
+    valid: boolean,
+    validationMessage: string,
+  ) => void;
 }

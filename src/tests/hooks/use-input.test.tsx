@@ -1,19 +1,23 @@
-import { render, screen } from "@testing-library/react";
-import { userEvent } from "@testing-library/user-event";
-import { UseInputHarness } from "./use-input.harness";
+import { renderHook, act } from "@testing-library/react";
+import { useInput } from "../../library";
 
 describe("use-input", () => {
-  it("updates values correctly", async () => {
-    const user = userEvent.setup();
+  it("has correct defaults", () => {
+    const { result } = renderHook(() => useInput("default", (x) => x));
 
-    render(<UseInputHarness />);
+    expect(result.current.value).toEqual("default");
+    expect(result.current.error).toEqual("");
+    expect(result.current.valid).toEqual(false);
+    expect(result.current.dirty).toEqual(false);
+  });
 
-    await user.click(screen.getByLabelText(/input/i));
+  it("updates values correctly", () => {
+    const { result } = renderHook(() => useInput("", (x) => x));
 
-    const value = "abc123";
+    act(() => {
+      result.current.handleUpdate("new", true, "");
+    });
 
-    await user.keyboard(value);
-
-    expect(await screen.findByLabelText(/input/i)).toHaveValue(value);
+    expect(result.current.valid).toEqual(true);
   });
 });

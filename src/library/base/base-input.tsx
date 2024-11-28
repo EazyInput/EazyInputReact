@@ -24,11 +24,21 @@ export const BaseInput: React.FC<BaseInputProperties> = ({
     }
   };
 
+  const handleUpdate = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const element = event.target as HTMLInputElement;
+
+    useInput.handleUpdate(
+      element.value,
+      element.validity.valid,
+      element.validationMessage,
+    );
+  };
+
   return (
     <input
       className={inputStyle}
-      onFocus={useInput.handleUpdate}
-      onInput={useInput.handleUpdate}
+      onFocus={handleUpdate}
+      onInput={handleUpdate}
       required={required}
       type={type}
       value={determineValue()}

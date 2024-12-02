@@ -21,6 +21,7 @@ export type { default as PrimaryInputProperties } from "./types/primary-input-pr
 
 export { BaseInput } from "./base/base-input";
 export { BaseField } from "./base/base-field";
+export { BaseCheckBox } from "./base/base-checkbox";
 
 // Primary
 

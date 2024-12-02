@@ -13,6 +13,7 @@ export default tseslint.config(
       "vite.config.ts",
       "vitest.config.ts",
       "src/vite-env.d.ts",
+      "src/library/vite-env.d.ts",
     ],
   },
   {

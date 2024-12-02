@@ -22,6 +22,7 @@ export const BaseCheckBox: React.FC<BaseCheckBoxProperties> = ({
       checked={useInput.value}
       className={inputStyle}
       id={useInput.id}
+      onFocus={handleUpdate}
       onChange={handleUpdate}
       placeholder={placeholder}
       ref={useInput.reference}

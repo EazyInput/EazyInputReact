@@ -10,7 +10,6 @@ export default defineConfig({
       insertTypesEntry: true,
       include: "src/library",
       tsconfigPath: resolve(__dirname, "tsconfig.build.json"),
-      rollupTypes: true,
     }),
   ],
   build: {
